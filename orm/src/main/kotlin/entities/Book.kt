@@ -13,5 +13,5 @@ class Book(
 
 )
 {   override fun toString(): String {
-    return "Language(bookId=$id, lang='$bookTitle')"}
+    return "Book(bookId=$id, lang='$bookTitle')"}
 }
