@@ -1,6 +1,5 @@
 import entities.Author
 import org.hibernate.SessionFactory
-import javax.management.Query
 
 
 class AuthorDAO(private val sessionFactory: SessionFactory) {
@@ -12,15 +11,17 @@ class AuthorDAO(private val sessionFactory: SessionFactory) {
         }
     }
 
-    fun delete(author: Author) {
+    fun delete(id: Long) {
+        val author: Author?
         sessionFactory.openSession().use { session ->
             session.beginTransaction()
+            author = session.get(Author::class.java, id)
             session.delete(author)
             session.transaction.commit()
         }
     }
 
-    fun find(id: Int): Author? {
+    fun find(id: Long): Author? {
         val result: Author?
         sessionFactory.openSession().use { session ->
             session.beginTransaction()
