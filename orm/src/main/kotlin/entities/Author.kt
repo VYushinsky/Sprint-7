@@ -27,7 +27,7 @@ class Author(
     }
 
     override fun toString(): String {
-        return "Language(id=$id, surname='$surname', " +
+        return "Author(id=$id, surname='$surname', " +
                 "language=$language, " +
                 "book=$book)"
     }
