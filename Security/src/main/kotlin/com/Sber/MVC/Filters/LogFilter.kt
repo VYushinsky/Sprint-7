@@ -1,4 +1,4 @@
-package com.Sber.MVC.Filters
+package com.Sber.MVC.filters
 
 import java.util.*
 import javax.servlet.Filter

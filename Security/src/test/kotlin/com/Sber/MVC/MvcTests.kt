@@ -1,7 +1,7 @@
 package com.Sber.MVC
 
 
-import com.Sber.MVC.Model.BookData
+import com.Sber.MVC.model.BookData
 import com.Sber.MVC.service.BookInfoService
 
 import org.junit.jupiter.api.Test

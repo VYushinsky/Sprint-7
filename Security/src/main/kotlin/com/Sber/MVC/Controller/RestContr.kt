@@ -1,6 +1,6 @@
-package com.Sber.MVC.Controller
+package com.Sber.MVC.controller
 
-import com.Sber.MVC.Model.BookData
+import com.Sber.MVC.model.BookData
 import com.Sber.MVC.service.BookInfoService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus

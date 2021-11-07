@@ -1,13 +1,3 @@
-DROP TABLE IF EXISTS billionaires;
-
-CREATE TABLE billionaires (
-                              id INT AUTO_INCREMENT  PRIMARY KEY,
-                              first_name VARCHAR(250) NOT NULL,
-                              last_name VARCHAR(250) NOT NULL,
-                              career VARCHAR(250) DEFAULT NULL
-);
-
-INSERT INTO billionaires (first_name, last_name, career) VALUES
-                                                             ('Aliko', 'Dangote', 'Billionaire Industrialist'),
-                                                             ('Bill', 'Gates', 'Billionaire Tech Entrepreneur'),
-                                                             ('Folrunsho', 'Alakija', 'Billionaire Oil Magnate');
+insert into usr(login, position, password, role) values('u', '1', 'u', 'ROLE_USER');
+insert into usr(login, position, password, role) values('m', '3', 'm', 'ROLE_MODERATOR');
+insert into usr(login, position, password, role) values('a', '2', 'a', 'ROLE_ADMIN');

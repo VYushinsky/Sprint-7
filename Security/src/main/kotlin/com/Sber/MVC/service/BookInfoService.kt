@@ -1,6 +1,6 @@
 package com.Sber.MVC.service
 
-import com.Sber.MVC.Model.BookData
+import com.Sber.MVC.model.BookData
 import org.springframework.stereotype.Service
 import java.util.concurrent.ConcurrentHashMap
 

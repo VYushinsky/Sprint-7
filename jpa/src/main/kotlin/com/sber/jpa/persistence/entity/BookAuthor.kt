@@ -19,8 +19,9 @@ class BookAuthor(
         fetch = FetchType.EAGER)
 
     @JoinColumn
-    var book:MutableList<Book> = mutableListOf()
-) {
+    var book:MutableList<Book> = mutableListOf())
+
+    {
     fun addBook(books: Book) {
         book.add(books)
     }

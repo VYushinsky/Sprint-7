@@ -1,4 +1,4 @@
-package com.Sber.MVC.Model
+package com.Sber.MVC.model
 
 data class BookData(
     var surname: String,
