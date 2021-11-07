@@ -48,4 +48,6 @@ class MvcContr @Autowired constructor(val service: BookInfoService) {
         service.edit(id, BookData(form.surname, form.address))
         return "home"
     }
+
+
 }

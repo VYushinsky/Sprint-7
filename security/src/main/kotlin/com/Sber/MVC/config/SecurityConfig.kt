@@ -43,6 +43,8 @@ class SecurityConfig : WebSecurityConfigurerAdapter() {
             .and().
                 formLogin()
             .and()
+                .exceptionHandling().accessDeniedPage("/toAccessDenied")
+            .and()
                 .csrf().disable()
     }
 }
