@@ -9,7 +9,7 @@ class TransferPessimisticLock {
         "postgres",
         "postgres"
     )
-    
+
     fun transfer(accountId1: Long, accountId2: Long, amount: Long) {
         connection.use { conn ->
             val autoCommit = conn.autoCommit
