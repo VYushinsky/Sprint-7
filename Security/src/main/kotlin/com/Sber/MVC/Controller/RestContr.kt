@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
-
-
 @RestController
 @RequestMapping("/api")
 class RestContr @Autowired constructor(val service: BookInfoService) {
@@ -17,6 +15,11 @@ class RestContr @Autowired constructor(val service: BookInfoService) {
     fun addRecord(@RequestBody contact: BookData): ResponseEntity<BookData> {
         service.add(contact)
         return ResponseEntity(contact, HttpStatus.CREATED)
+    }
+
+    @GetMapping("/toAccessDenied")
+    fun toAccessDeniedPage(): String {
+        return "/accessDenied"
     }
 
     @GetMapping("/list")
