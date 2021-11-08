@@ -4,7 +4,7 @@ import java.sql.DriverManager
 
 class TransferConstraint {
     private val connection = DriverManager.getConnection(
-        "jdbc:postgresql://localhost:5432/postgres",
+        "jdbc:postgresql://localhost:5432/rdbms",
         "postgres",
         "postgres"
     )
