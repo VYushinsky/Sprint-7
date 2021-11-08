@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список адресов</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Surname</th>
+        <th>Address</th>
+    </tr>
+    <tr th:each="user: ${users}">
+        <td th:utext="${user.surname}">undefined</td>
+        <td th:utext="${user.address}">undefined</td>
+    </tr>
+</table>
+<form action="/toHome" method="get">
+    <p><input type="submit" value="To home page"></p>
+</form>
+</body>
+</html>
