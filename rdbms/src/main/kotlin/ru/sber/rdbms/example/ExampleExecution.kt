@@ -8,6 +8,7 @@ fun main() {
         "postgres",
         "postgres"
     )
+
     connection.use { conn ->
         val prepareStatement = conn.prepareStatement("select 1")
         prepareStatement.use { statement ->

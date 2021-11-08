@@ -17,6 +17,7 @@ fun main() {
         "postgres",
         "postgres"
     )
+
     connection.use { conn ->
         val autoCommit = conn.autoCommit
         try {

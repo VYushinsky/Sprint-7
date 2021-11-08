@@ -11,10 +11,7 @@ fun main() {
             "postgres"
         )
 
-
-
         connection.use { conn ->
-
             val autoCommit = conn.autoCommit
             var version1 = 0
             var version2 = 0
