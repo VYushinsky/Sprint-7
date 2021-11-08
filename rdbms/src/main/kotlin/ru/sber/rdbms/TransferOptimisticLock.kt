@@ -14,7 +14,7 @@ fun main() {
         connection.use { conn ->
 
             val autoCommit = conn.autoCommit
-            var version = 0
+            var version0 = 0
             var version1 = 0
             var balance = 0
 
@@ -28,7 +28,7 @@ fun main() {
                     statement.setLong(1, accountId1)
                     statement.executeQuery().use {
                         it.next()
-                        version = it.getInt("version")
+                        version0 = it.getInt("version")
                         balance = it.getInt("amount")
                     }
                 }
@@ -55,7 +55,7 @@ fun main() {
                 prepareStatement3.use { statement ->
                     statement.setLong(1, amount)
                     statement.setLong(2, accountId1)
-                    statement.setInt(3, version)
+                    statement.setInt(3, version0)
                     val updatedRows = statement.executeUpdate()
                     if (updatedRows == 0)
                         throw SQLException("Concurrent update")
