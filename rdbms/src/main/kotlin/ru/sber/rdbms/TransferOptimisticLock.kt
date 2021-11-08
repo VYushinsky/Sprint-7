@@ -11,11 +11,13 @@ fun main() {
             "postgres"
         )
 
+
+
         connection.use { conn ->
 
             val autoCommit = conn.autoCommit
-            var version0 = 0
             var version1 = 0
+            var version2 = 0
             var balance = 0
 
             try {
@@ -28,7 +30,7 @@ fun main() {
                     statement.setLong(1, accountId1)
                     statement.executeQuery().use {
                         it.next()
-                        version0 = it.getInt("version")
+                        version1 = it.getInt("version")
                         balance = it.getInt("amount")
                     }
                 }
@@ -44,7 +46,7 @@ fun main() {
                     statement.setLong(1, accountId2)
                     statement.executeQuery().use {
                         it.next()
-                        version1 = it.getInt("version")
+                        version2 = it.getInt("version")
                     }
                 }
 
@@ -55,7 +57,7 @@ fun main() {
                 prepareStatement3.use { statement ->
                     statement.setLong(1, amount)
                     statement.setLong(2, accountId1)
-                    statement.setInt(3, version0)
+                    statement.setInt(3, version1)
                     val updatedRows = statement.executeUpdate()
                     if (updatedRows == 0)
                         throw SQLException("Concurrent update")
@@ -69,7 +71,7 @@ fun main() {
                 prepareStatement4.use { statement ->
                     statement.setLong(1, amount)
                     statement.setLong(2, accountId2)
-                    statement.setInt(3, version1)
+                    statement.setInt(3, version2)
                     val updatedRows = statement.executeUpdate()
                     if (updatedRows == 0)
                         throw SQLException("Concurrent update")
